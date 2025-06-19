@@ -27,14 +27,23 @@ const __dirname = dirname(__filename);
 const app = express();
 
 
+// app.use(
+//   cors({
+//     origin: 'http://localhost:5173',
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://interview-prep-ai-1-9wrs.onrender.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   })
 );
+
 
 
 app.use(cookieParser());
