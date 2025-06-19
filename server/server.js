@@ -35,15 +35,14 @@ const app = express();
 //     credentials: true,
 //   })
 // );
-app.use(
-  cors({
-    origin: ['http://localhost:5173', 'https://interview-prep-ai-1-9wrs.onrender.com'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://interview-prep-ai-1-9wrs.onrender.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}));
 
+app.options('*', cors());
 
 
 app.use(cookieParser());
